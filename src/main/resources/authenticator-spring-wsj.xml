@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<bean id="authenticator" class="com.polyspot.authenticator.Authenticator">
+		<property name="authenticatorRequests">
+			<list>
+				<bean id="loginRequest" class="com.polyspot.authenticator.PostAuthenticatorRequest">
+					<property name="targetUrl">
+						<value><![CDATA[https://id.wsj.com/auth/submitlogin.json]]></value>
+					</property>	
+					<property name="jsonBody">
+						<value><![CDATA[{"username":"gbrejaud@customermatrix.com","password":"PolySpot2012*","url":"https://id.wsj.com/access/50f5723cbd7fb2d2f6629af4/latest/login_reload.html","template":"default","realm":"default","savelogin":"true"}]]></value>
+					</property>	
+					<property name="headers">
+						<map key-type="java.lang.String" value-type="java.lang.String">
+							<entry key="Content-Type" value="application/json; charset=UTF-8" />
+						</map>
+					</property>
+				</bean>
+				<bean id="toSubmitLoginAuthorize" class="com.polyspot.authenticator.GetAuthenticatorRequest">
+					<property name="retrievingUrlFromPreviousResponseJson" value="true" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+</beans>

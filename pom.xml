@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>customer-matrix-http-utils</artifactId>
+	<name>Customer Matrix : Http Utils</name>
+	<description>
+	- HttpClientUtil.java is a usefull class to work with httpClient - polyspot-authenticator allows to configure httpRequest called by an httpClient, in order to pass through an authentication system, by simuling the behaviour of a web browser.
+	</description>
+
+	<parent>
+		<groupId>com.cmx.infofeeds</groupId>
+		<artifactId>infofeeds</artifactId>
+		<version>IF.2016.3-SNAPSHOT</version>
+		<relativePath>../../../</relativePath>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+		</dependency>
+	</dependencies>
+</project>
